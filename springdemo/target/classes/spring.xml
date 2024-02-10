@@ -7,5 +7,8 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd">
         
-	<bean id="triangle" class="org.koushik.javabrains.Triangle"></bean>
+	<bean id="triangle" class="org.koushik.javabrains.Triangle">
+        <property name="type" value="Equilateral"></property>
+    </bean>
+
 </beans>
