@@ -13,7 +13,7 @@
     </bean>
 
     <bean id = "circle" class="org.koushik.javabrains.Circle">
-        <property name="center" ref="pointA"></property>
+        <!-- <property name="center" ref="pointA"></property> -->
     </bean>
 
     <bean id="pointA" class="org.koushik.javabrains.Point">
@@ -30,4 +30,6 @@
         <property name="x" value="20"></property>
         <property name="y" value="0"></property>
     </bean>
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>
 </beans>
