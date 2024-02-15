@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean id = "triangle" class="org.koushik.javabrains.Triangle" autowire="byName">
+    <bean id = "triangle" class="org.koushik.javabrains.Triangle" autowire="byName" init-method="myInit" destroy-method="cleanUp">
         
     </bean>
 
