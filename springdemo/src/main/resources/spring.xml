@@ -7,13 +7,20 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean id = "parentTriangle" class="org.koushik.javabrains.Triangle">
-        <property name="pointA" ref="pointA"></property>
+    <bean id = "parentTriangle" class="org.koushik.javabrains.Triangle" abstract="true">
+        <property name="points">
+            <list>
+                <ref bean="pointA"></ref>
+            </list>
+        </property>
     </bean>
 
 	<bean id="triangle1" class="org.koushik.javabrains.Triangle" parent="parentTriangle">
-        <property name="pointB" ref="pointB"></property>
-        <property name="pointC" ref="pointC"></property>
+        <property name="points">
+            <list merge="true">
+                <ref bean="pointB"></ref>
+            </list>
+        </property>
     </bean>
 
     <bean id="triangle2" class="org.koushik.javabrains.Triangle" parent="parentTriangle">

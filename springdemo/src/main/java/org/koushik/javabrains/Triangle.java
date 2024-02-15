@@ -1,7 +1,8 @@
 package org.koushik.javabrains;
-import org.springframework.context.ApplicationContext;
+import java.util.List;
 
 public class Triangle{
+    private List<Point> points;
     private Point pointA;
     private Point pointB;
     private Point pointC;
@@ -24,10 +25,19 @@ public class Triangle{
     public void setPointC(Point pointC) {
         this.pointC = pointC;
     }
+    public List<Point> getPoints() {
+        return points;
+    }
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
 
     public void draw(){
-        System.out.println("Point = {" + getPointA().getX() +", " + getPointA().getY() + "}");
-        System.out.println("Point = {" + getPointB().getX() +", " + getPointB().getY() + "}");
-        System.out.println("Point = {" + getPointC().getX() +", " + getPointC().getY() + "}");
+        for(Point point:points){
+            System.out.println("Point = {" + point.getX() +", " + point.getY() + "}");
+        }
+        // System.out.println("Point = {" + getPointA().getX() +", " + getPointA().getY() + "}");
+        // System.out.println("Point = {" + getPointB().getX() +", " + getPointB().getY() + "}");
+        // System.out.println("Point = {" + getPointC().getX() +", " + getPointC().getY() + "}");
     }
 }
