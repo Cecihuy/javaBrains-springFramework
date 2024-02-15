@@ -13,8 +13,8 @@
     </bean>
 
     <bean id="pointA" class="org.koushik.javabrains.Point">
-        <property name="x" value="0"></property>
-        <property name="y" value="0"></property>
+        <property name="x" value="${pointA.pointX}"></property>
+        <property name="y" value="${pointA.pointY}"></property>
     </bean>
 
     <bean id="pointB" class="org.koushik.javabrains.Point">
@@ -27,6 +27,9 @@
         <property name="y" value="0"></property>
     </bean>
 
-    <bean class="org.koushik.javabrains.DisplayNameBeanPostProcessor"></bean>
-
+    <bean class="org.koushik.javabrains.MyBeanFactoryPP"></bean>
+    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="pointsconfig.properties"></property>
+    </bean>
 </beans>
