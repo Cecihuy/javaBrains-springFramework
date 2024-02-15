@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd"
-    default-init-method="myInit" default-destroy-method="cleanUp">
+    >
     
     <bean id = "triangle" class="org.koushik.javabrains.Triangle" autowire="byName" >
         
@@ -26,5 +26,7 @@
         <property name="x" value="20"></property>
         <property name="y" value="0"></property>
     </bean>
+
+    <bean class="org.koushik.javabrains.DisplayNameBeanPostProcessor"></bean>
 
 </beans>
