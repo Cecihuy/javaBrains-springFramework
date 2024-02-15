@@ -5,9 +5,10 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context 
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd"
+    default-init-method="myInit" default-destroy-method="cleanUp">
     
-    <bean id = "triangle" class="org.koushik.javabrains.Triangle" autowire="byName" init-method="myInit" destroy-method="cleanUp">
+    <bean id = "triangle" class="org.koushik.javabrains.Triangle" autowire="byName" >
         
     </bean>
 
