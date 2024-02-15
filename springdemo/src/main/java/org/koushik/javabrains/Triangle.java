@@ -1,8 +1,8 @@
 package org.koushik.javabrains;
-import java.util.List;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle{
-    private List<Point> points;
+public class Triangle implements InitializingBean, DisposableBean{
     private Point pointA;
     private Point pointB;
     private Point pointC;
@@ -25,19 +25,18 @@ public class Triangle{
     public void setPointC(Point pointC) {
         this.pointC = pointC;
     }
-    public List<Point> getPoints() {
-        return points;
-    }
-    public void setPoints(List<Point> points) {
-        this.points = points;
-    }
 
     public void draw(){
-        for(Point point:points){
-            System.out.println("Point = {" + point.getX() +", " + point.getY() + "}");
-        }
-        // System.out.println("Point = {" + getPointA().getX() +", " + getPointA().getY() + "}");
-        // System.out.println("Point = {" + getPointB().getX() +", " + getPointB().getY() + "}");
-        // System.out.println("Point = {" + getPointC().getX() +", " + getPointC().getY() + "}");
+        System.out.println("Point = {" + getPointA().getX() +", " + getPointA().getY() + "}");
+        System.out.println("Point = {" + getPointB().getX() +", " + getPointB().getY() + "}");
+        System.out.println("Point = {" + getPointC().getX() +", " + getPointC().getY() + "}");
+    }
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("InitialisingBean init method called for Triangle");
+    }
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("DisposableBean destroy method called for Triangle");
     }
 }
