@@ -6,9 +6,18 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd">
-        
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName">
-        
+    
+    <bean id = "parentTriangle" class="org.koushik.javabrains.Triangle">
+        <property name="pointA" ref="pointA"></property>
+    </bean>
+
+	<bean id="triangle1" class="org.koushik.javabrains.Triangle" parent="parentTriangle">
+        <property name="pointB" ref="pointB"></property>
+        <property name="pointC" ref="pointC"></property>
+    </bean>
+
+    <bean id="triangle2" class="org.koushik.javabrains.Triangle" parent="parentTriangle">
+        <property name="pointB" ref="pointB"></property>
     </bean>
 
     <bean id="pointA" class="org.koushik.javabrains.Point">
