@@ -1,6 +1,7 @@
 package org.koushik.javabrains;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.annotation.Resource;
 
 public class Circle implements Shape{
     private Point center;
@@ -8,8 +9,7 @@ public class Circle implements Shape{
     public Point getCenter() {
         return center;
     }
-    @Autowired
-    @Qualifier(value = "circleRelated")
+    @Resource(name = "pointC")
     public void setCenter(Point center) {
         this.center = center;
     }
@@ -17,5 +17,13 @@ public class Circle implements Shape{
     public void draw() {
         System.out.println("Drawing Circle");
         System.out.println("Circle point is: (" + center.getX() + ", " + center.getY() + ")");
+    }
+    @PostConstruct
+    public void initializeCircle(){
+        System.out.println("Init of Circle");
+    }
+    @PreDestroy
+    public void destroyCircle(){
+        System.out.println("Destroy of Circle");
     }
 }
