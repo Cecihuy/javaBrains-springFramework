@@ -27,9 +27,8 @@ public class Circle implements Shape{
     }
     @Override
     public void draw() {
-        System.out.println("Drawing Circle");
-        System.out.println("Circle point is: (" + center.getX() + ", " + center.getY() + ")");
-        System.out.println(this.messageSource.getMessage("greeting", null, "Default Greeting", null));
+        System.out.println(this.messageSource.getMessage("drawing.circle", null, "Default drawing message", null));
+        System.out.println(this.messageSource.getMessage("drawing.point", new Object[] {center.getX(), center.getY()}, "Default point message", null));
     }
     @PostConstruct
     public void initializeCircle(){
