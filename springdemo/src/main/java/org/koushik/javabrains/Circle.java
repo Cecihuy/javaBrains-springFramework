@@ -1,8 +1,10 @@
 package org.koushik.javabrains;
+import org.springframework.stereotype.Component;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.annotation.Resource;
 
+@Component
 public class Circle implements Shape{
     private Point center;
 
