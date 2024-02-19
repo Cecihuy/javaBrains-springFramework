@@ -28,4 +28,11 @@
     </bean>
 
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <aop:config>
+        <aop:aspect id="logAspect" ref="loggingAspect">
+            <aop:pointcut id="allGettr" expression="execution(* get*())"></aop:pointcut>
+            <aop:around pointcut-ref="allGettr" method="myAroundAdvice"></aop:around>
+        </aop:aspect>
+    </aop:config>
 </beans>
