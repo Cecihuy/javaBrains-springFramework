@@ -1,14 +1,7 @@
 package org.koushik.javabrains.aspect;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 
-// @Aspect
 public class LoggingAspect {
-    // @Around(value = "allGetters()")
     public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){        
         Object returnValue = null;
         try {
@@ -21,7 +14,7 @@ public class LoggingAspect {
         System.out.println("After finally");
         return returnValue;
     }
-    // @Pointcut(value = "execution(* get*())")
-    // public void allGetters(){
-    // }
+    public void loggingAdvice(){
+        System.out.println("Logging from the advice");
+    }
 }
