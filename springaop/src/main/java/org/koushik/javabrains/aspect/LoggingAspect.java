@@ -12,7 +12,7 @@ public class LoggingAspect {
     public void loggingAdvice(JoinPoint joinPoint){
         
     }
-    @Around(value = "allGetters()")
+    @Around(value = "@annotation(org.koushik.javabrains.aspect.Loggable)")
     public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){        
         Object returnValue = null;
         try {
