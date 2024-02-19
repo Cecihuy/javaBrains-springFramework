@@ -11,14 +11,12 @@
     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
     >
 
-    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-
     <bean id="triangle" class="org.koushik.javabrains.model.Triangle">
         <property name="name" value="Triangle Name"></property>
     </bean>
 
     <bean id="circle" class="org.koushik.javabrains.model.Circle">
-        <property name="name" value="Circle Name"></property>
+        <!-- <property name="name" value="Circle Name"></property> -->
     </bean>
 
     <bean id="shapeService" class="org.koushik.javabrains.service.ShapeService" autowire="byName">
@@ -28,4 +26,6 @@
     <bean id="loggingAspect" class="org.koushik.javabrains.aspect.LoggingAspect">
         
     </bean>
+
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>
