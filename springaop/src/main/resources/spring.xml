@@ -16,7 +16,7 @@
     </bean>
 
     <bean id="circle" class="org.koushik.javabrains.model.Circle">
-        <!-- <property name="name" value="Circle Name"></property> -->
+        <property name="name" value="Circle Name"></property>
     </bean>
 
     <bean id="shapeService" class="org.koushik.javabrains.service.ShapeService" autowire="byName">
