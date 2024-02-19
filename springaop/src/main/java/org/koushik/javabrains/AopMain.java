@@ -7,6 +7,6 @@ public class AopMain {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");           
         ShapeService shapeService = applicationContext.getBean("shapeService", ShapeService.class);
-        System.out.println(shapeService.getCircle().getName());
+        System.out.println(shapeService.getTriangle().getName());
     }
 }

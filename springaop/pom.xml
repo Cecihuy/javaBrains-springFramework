@@ -34,17 +34,15 @@
 
         <dependency>
             <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
+            <artifactId>aspectjweaver</artifactId>
             <version>1.9.21.1</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
+            <artifactId>aspectjrt</artifactId>
             <version>1.9.21.1</version>
-            <scope>runtime</scope>
-        </dependency>
+        </dependency>        
     </dependencies>
 
 </project>
