@@ -11,9 +11,8 @@ import javax.sql.DataSource;
 
 @Component
 public class JdbcDaoImpl {
-    @Autowired
     private DataSource dataSource;
-    private JdbcTemplate jdbcTemplate = new JdbcTemplate();
+    private JdbcTemplate jdbcTemplate;
 
     public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
@@ -24,8 +23,10 @@ public class JdbcDaoImpl {
     public DataSource getDataSource() {
         return dataSource;
     }
+    @Autowired
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
+        // this.dataSource = dataSource;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }    
     public Circle getCircle(int circleId){
         Connection conn = null;
@@ -54,7 +55,7 @@ public class JdbcDaoImpl {
     }
     public int getCircleCount(){
         String sql = "select count(*) from circle";
-        jdbcTemplate.setDataSource(getDataSource());
+        // jdbcTemplate.setDataSource(getDataSource());
         return jdbcTemplate.queryForObject(sql, Integer.class);
     }
 }
