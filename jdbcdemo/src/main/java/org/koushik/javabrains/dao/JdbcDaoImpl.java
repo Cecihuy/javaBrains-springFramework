@@ -1,18 +1,28 @@
 package org.koushik.javabrains.dao;
 import org.koushik.javabrains.model.Circle;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.sql.DataSource;
 
+@Component
 public class JdbcDaoImpl {
+    @Autowired
+    private DataSource dataSource;
+
+    public DataSource getDataSource() {
+        return dataSource;
+    }
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
     public Circle getCircle(int circleId){
         Connection conn = null;
-        try{
-            String driver = "org.apache.derby.jdbc.ClientDriver";
-            Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/db");
+        try{            
+            conn = dataSource.getConnection();
             PreparedStatement ps = conn.prepareStatement("select * from circle where id = ?");
             ps.setInt(1, circleId);
 
