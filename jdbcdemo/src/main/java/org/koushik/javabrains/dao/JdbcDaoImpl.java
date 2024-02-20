@@ -25,7 +25,6 @@ public class JdbcDaoImpl {
     }
     @Autowired
     public void setDataSource(DataSource dataSource) {
-        // this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }    
     public Circle getCircle(int circleId){
@@ -55,7 +54,10 @@ public class JdbcDaoImpl {
     }
     public int getCircleCount(){
         String sql = "select count(*) from circle";
-        // jdbcTemplate.setDataSource(getDataSource());
         return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
+    public String getCircleName(int circleId){
+        String sql = "select name from circle where id = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{circleId}, String.class);
     }
 }

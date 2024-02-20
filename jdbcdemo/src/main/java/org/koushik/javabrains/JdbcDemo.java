@@ -12,6 +12,6 @@ public class JdbcDemo {
         // Circle circle = dao.getCircle(1);
         // System.out.println(circle.getName());
 
-        System.out.println(dao.getCircleCount());
+        System.out.println(dao.getCircleName(1));
     }
 }
