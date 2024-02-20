@@ -12,8 +12,10 @@
 
     <context:component-scan base-package="org.koushik.javabrains"></context:component-scan>
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"></property>
         <property name="url" value="jdbc:derby://localhost:1527/db;create=true"></property>
+        <property name="initialSize" value="2"></property>
+        <property name="maxTotal" value="5"></property>
     </bean>    
 </beans>
