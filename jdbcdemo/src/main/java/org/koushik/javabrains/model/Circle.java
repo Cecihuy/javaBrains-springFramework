@@ -1,6 +1,10 @@
 package org.koushik.javabrains.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Circle {
+    @Id
     private int id;
     private String name;
     
